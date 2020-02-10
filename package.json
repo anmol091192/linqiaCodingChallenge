@@ -1,0 +1,23 @@
+{
+  "name": "linqia_coding_challenge",
+  "version": "1.0.0",
+  "description": "twitter content lab",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "cd client && npm install",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Anmol Khandekar",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
