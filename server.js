@@ -6,25 +6,34 @@ const app = express();
 
 var T = new Twit(config);
 
-var params = {
-    q: 'rainbow', 
-    count: 2 
-};
 
-T.get('search/tweets',params, gotData);
-
-function gotData(err, data, response) {
-    //console.log(data);
+let result = {}; 
+function getData(err, data, response) {
+    return result;
 }
 
 app.get('/api/customers', (req,res) => {
-    const customers = [
-        {id:1, firstName: 'Anmol', lastName: 'Khandekar'},
-        {id:2, firstName: 'Rajat', lastName: 'Patel'},
-        {id:3, firstName: 'Anish', lastName: 'Ranjan'},
-    ];
+    var params = {
+        q: 'rainbow', 
+        count: 2 
+    };
+    console.log('--- twitter api called ! ----');
+    let result = {};
+   T.get('search/tweets',params) .catch(function (err) {
+    console.log('caught error', err.stack)
+  })
+  .then(function (result) {
+    // `result` is an Object with keys "data" and "resp".
+    // `data` and `resp` are the same objects as the ones passed
+    // to the callback.
+    // See https://github.com/ttezel/twit#tgetpath-params-callback
+    // for details.
 
-    res.json(customers);
+    // console.log('data---', result.data);
+    // console.log('res ---', res);
+    return res.json(result.data);
+  });
+   
 });
 
 const port = 5000;
