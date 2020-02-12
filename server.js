@@ -25,15 +25,20 @@ app.get('/search', (req,res) => {
     console.log('caught error', err.stack)
   })
   .then(function (result) {
-    // `result` is an Object with keys "data" and "resp".
-    // `data` and `resp` are the same objects as the ones passed
-    // to the callback.
-    // See https://github.com/ttezel/twit#tgetpath-params-callback
-    // for details.
-
-    // console.log('data---', result.data);
-    // console.log('res ---', res);
-    return res.json(result.data);
+    console.log(result.data.statuses);
+    let data = result.data.statuses.map((status)=>{
+      return  {
+        id:status.id,
+        created_at : status.created_at,
+        text : status.text,
+        retweets : status.retweet_count,
+        favorites : status.favorite_count,
+        followers : status.followers_count,
+        name: status.user.name,
+        handle: status.user.screen_name
+    }
+    });
+    return res.json(data);
   });
    
 });
