@@ -12,10 +12,12 @@ function getData(err, data, response) {
     return result;
 }
 
-app.get('/api/customers', (req,res) => {
+app.get('/search', (req,res) => {
+    var queryParameters =  req.query;
+    console.log("query paramteres", queryParameters);
     var params = {
-        q: 'rainbow', 
-        count: 2 
+        q: queryParameters.hashtags, 
+        count: queryParameters.count 
     };
     console.log('--- twitter api called ! ----');
     let result = {};
