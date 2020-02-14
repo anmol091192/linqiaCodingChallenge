@@ -4,7 +4,7 @@ import SearchResults from './search-results';
 
 export default function TwitterApp () {
     const [hashtags, setHashtags] = useState('');
-    const [count, setCount] = useState(10);
+    const [count, setCount] = useState(5);
     const [results,setResults] = useState();
     const [sortBy, setSortBy] = useState('Favorites');
     const [order, setOrder] = useState('Ascending');
