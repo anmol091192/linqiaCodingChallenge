@@ -15,21 +15,19 @@ const SearchResults = (
         return (
             <>
                 {sorted.map((status) => 
-                    <div className="">{status.text}</div>
+                    <div className="results">{status.text}</div>
                 )}
             </>
         );
     };
 
     return (
-        <>
-            <div>
-                Result is:
-            </div>
-            <div className="hashtagsWrapper">
+        <div>
+            <h3>Tweets :</h3>
+            <div className="searchResults">
                 {renderResults(statuses)}
             </div>
-        </>
+        </div>
     );
 }
 

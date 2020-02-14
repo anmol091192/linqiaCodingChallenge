@@ -18,9 +18,9 @@ export default function TwitterApp () {
         })
         .catch((err) => console.log('error',err));
     };
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("data is : ", hashtags, count, sortBy, order);
         fetchData();
     };
 
@@ -32,30 +32,32 @@ export default function TwitterApp () {
     };
 
     return (
-        <div>
+        <div className="container">
             <h1>Twitter Content Lab</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form">
                 <input
                     type='text'
-                    placeholder='Enter hashtags'
-                    name='hashtag'
+                    placeholder='Enter hashtags Eg. #hashtag1 #hashtag2'
+                    name='hashtags'
+                    className="hashtags"
                     value={hashtags}
+                    required
                     onChange={(event) => setHashtags(event.target.value)}
                 />
                 <input
                     type='number'
                     placeholder='Enter number of tweets'
                     name='count'
+                    className="count"
                     value={count}
                     onChange={(event => setCount(event.target.value))}
                 />
-                <button>Update</button>
+                <button className="submit">Submit</button>
             </form>
-            <hr/>
             {hashtags && hashtags.length > 0 && <SearchQueryInfo hashtags={hashtags} />}
-            <hr/>
-            <div className="form-group">
-                <label>Sort by</label>
+            {results && results.length > 0 &&
+            <div className="formGroup">
+                <label>Sort by :</label>
                 <select 
                 className="sort" 
                 name='sortBy'
@@ -65,9 +67,7 @@ export default function TwitterApp () {
                     <option value="retweets">Retweeted</option>
                     <option value="followers">Followers</option>
                 </select>
-            </div>
-            <div className="form-group">
-                <label>Order</label>
+                <label>Order :</label>
                 <select 
                 className="order" 
                 name="order"
@@ -77,6 +77,7 @@ export default function TwitterApp () {
                     <option value="desc">Descending</option>
                 </select>
             </div>
+            }
             {results  && results.length > 0 && <SearchResults statuses={results} sort={sortBy} order={order}/>}
         </div>
     );

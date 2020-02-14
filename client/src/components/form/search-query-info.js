@@ -6,7 +6,7 @@ const SearchQueryInfo = (
 ) => {
     const renderHashtag = (hashtags) => {
         console.log(' input hastags ', hashtags);
-        const hashtagValue = hashtags ? hashtags.split(',') : [];
+        const hashtagValue = hashtags ? hashtags.split(' ') : [];
         return (
             <>
                 {hashtagValue.map((hashtag) => hashtag.length > 0
@@ -18,14 +18,14 @@ const SearchQueryInfo = (
     };
 
     return (
-        <>
-            <div>
+        <div className="searchQuery">
+            <h3>
                 Hashtags are:
-            </div>
+            </h3>
             <div className="hashtagsWrapper">
                 {renderHashtag(hashtags)}
             </div>
-        </>
+        </div>
     );
 }
 
