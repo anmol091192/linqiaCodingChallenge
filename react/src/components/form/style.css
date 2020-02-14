@@ -1,0 +1,10 @@
+.hashtag {
+    padding: 6px 15px;
+    margin-right: 12px;
+    box-shadow: 0 0 2px #888;
+    border-radius: 20px;
+    background-color: #222;
+    color: #fff;
+    width: fit-content;
+    display: inline-block;
+}
