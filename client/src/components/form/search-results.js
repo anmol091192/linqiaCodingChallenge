@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './styles.css';
 var _ = require('lodash');
 
 
@@ -8,10 +8,8 @@ const SearchResults = (
     sort,
     order}    
 ) => {
-    console.log("statuses----",statuses,sort,order);
     const renderResults = (statuses) => {
         let sorted = _.orderBy(statuses,[sort],[order]);
-        console.log("sorted",sorted);
         return (
             <>
                 {sorted.map((status) => 
@@ -22,12 +20,9 @@ const SearchResults = (
     };
 
     return (
-        <div>
-            <h3>Tweets :</h3>
-            <div className="searchResults">
-                {renderResults(statuses)}
-            </div>
-        </div>
+        <div className="search-results">
+            {renderResults(statuses)}
+        </div>   
     );
 }
 

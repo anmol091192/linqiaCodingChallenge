@@ -1,0 +1,148 @@
+/* Form page styling */
+.container {
+  margin: auto;
+  padding: 20px;
+  background-color: #ffff;
+  max-width: 800px;
+}
+
+.form {
+  margin: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #F5F8FA;
+}
+.search-group {
+  margin: 10px;
+  padding: auto;
+}
+
+.search-label {
+  width: 60px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.hashtags {
+  width: 180px;
+  height: 30px;
+  border: 2px solid #cecece;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.count-group {
+  margin: 10px;
+  padding: auto;
+}
+
+.count-label {
+  width: 60px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.count {
+  width: 180px;
+  height: 30px;
+  border: 2px solid #cecece;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.submit {
+  width: 100px;
+  height: 30px;
+  background-color: #1DA1F2;
+  border: 2px solid #cecece;
+  border-radius: 15px;
+  margin:10px;
+  color: #fff;
+}
+
+/* Search query page */
+
+.search-query {
+  margin: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #F5F8FA;
+}
+.hashtags-wrapper {
+  margin: 5px;
+  padding: 5px;
+}
+
+.hashtag {
+  padding: 6px 15px;
+  margin: 5px 5px;
+  box-shadow: 0 0 2px #888;
+  border-radius: 20px;
+  background-color: #14171A;
+  color: #fff;
+  width: fit-content;
+  display: inline-block;
+}
+
+/* sort container */
+
+.sort-container {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #F5F8FA;
+}
+.group {
+  margin: 10px;
+}
+
+.sort-label {
+  margin-right: 5px;
+}
+
+.sort {
+  width: 180px;
+  height: 30px;
+  border: 2px solid #cecece;
+  border-radius: 10px;
+  padding: 2px;
+  background-color: #fff;
+  margin-right: 5px;
+}
+
+.order-label {
+  margin-right: 5px;
+}
+
+.order {
+  width: 180px;
+  height: 30px;
+  border: 2px solid #cecece;
+  border-radius: 10px;
+  padding: 2px;
+  background-color: #fff;
+}
+
+/* search result page */
+
+.search-results {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  height: 300px;
+  overflow-y: scroll;
+  background-color: #F5F8FA;
+}
+
+.results {
+  padding: 6px 15px;
+  margin: 5px 5px;
+  box-shadow: 0 0 2px #888;
+  border-radius: 20px;
+  background-color: #fff;
+  width: fit-content;
+  display: inline-block;
+}
+
+
+

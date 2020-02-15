@@ -1,11 +1,10 @@
 import React from 'react';
-import './style.css';
+import './styles.css';
 
 const SearchQueryInfo = (
     {hashtags},
 ) => {
     const renderHashtag = (hashtags) => {
-        console.log(' input hastags ', hashtags);
         const hashtagValue = hashtags ? hashtags.split(' ') : [];
         return (
             <>
@@ -18,11 +17,11 @@ const SearchQueryInfo = (
     };
 
     return (
-        <div className="searchQuery">
-            <h3>
+        <div className="search-query">
+            <h4>
                 Hashtags are:
-            </h3>
-            <div className="hashtagsWrapper">
+            </h4>
+            <div className="hashtags-wrapper">
                 {renderHashtag(hashtags)}
             </div>
         </div>
