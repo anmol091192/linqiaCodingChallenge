@@ -1,6 +1,6 @@
 # Twitter Content Lab
 
-Twitter Content Labis a simple webApp to display N sorted tweets with one or more hashtags. Tweets can be sorted based on favourites , retweets and followers count.
+Twitter Content Lab is a simple webApp to display N sorted tweets with one or more hashtags. Tweets can be sorted based on favourites , retweets and followers count.
 
 ## Getting Started
 
@@ -12,7 +12,6 @@ What things you need to install the software and how to install them
 ```
 Node
 express
-heroku cli
 ```
 
 ### Installing
@@ -64,7 +63,7 @@ app is deplpoyed on heroku : https://fathomless-river-42114.herokuapp.com/
 
 * [React] - The web framework used
 * [NPM] - Dependency Management
-* [Express]- wed Framework
+* [Express]- Web Framework
 * [twit]- Twitter npm package
 
 
