@@ -8,11 +8,12 @@ export default function TwitterApp () {
     const [hashtags, setHashtags] = useState('');
     const [count, setCount] = useState(5);
     const [results,setResults] = useState();
-    const [sortBy, setSortBy] = useState('Favorites');
-    const [order, setOrder] = useState('Ascending');
+    const [sortBy, setSortBy] = useState('favourites');
+    const [order, setOrder] = useState('asc');
 
     const fetchData = () => {
-        let url = `/search?hashtags=${encodeURIComponent(hashtags)}&count=${count}`;
+        let hashs = encodeURIComponent(hashtags.trim());
+        let url = `/search?hashtags=${hashs}&count=${count}`;
         fetch(url)
         .then(res => res.json())
         .then((myJson) => {
@@ -25,6 +26,14 @@ export default function TwitterApp () {
         event.preventDefault();
         fetchData();
     };
+
+    const resetValue = () => {
+        setHashtags('');
+        setCount(5);
+        setResults();
+        setSortBy('favourites');
+        setOrder('asc');
+    }
 
     const handleChange = (event) => {
         if(event.target.name === 'sortBy')
@@ -53,14 +62,17 @@ export default function TwitterApp () {
                     <label className="count-label">Count :</label>
                     <input
                         type='number'
-                        placeholder='Enter number of tweets'
+                        placeholder='Enter number of tweets(1 - 100)'
                         name='count'
                         className="count"
                         value={count}
+                        min="1" 
+                        max="100"
                         onChange={(event => setCount(event.target.value))}
                     />
                 </div>
                 <button className="submit">Submit</button>
+                <button className="submit" type="button" onClick={() => resetValue()}>Reset</button>
             </form>
             {hashtags && hashtags.length > 0 && <SearchQueryInfo hashtags={hashtags} />}
             {results && results.length > 0 &&
@@ -72,9 +84,10 @@ export default function TwitterApp () {
                     <select 
                     className="sort" 
                     name='sortBy'
+                    defaultValue="favourites"
                     onChange={handleChange}
                     >
-                        <option value="favorites">Favorites</option>
+                        <option value="favourites">Favourites</option>
                         <option value="retweets">Retweeted</option>
                         <option value="followers">Followers</option>
                     </select>
@@ -84,6 +97,7 @@ export default function TwitterApp () {
                     <select 
                     className="order" 
                     name="order"
+                    defaultValue="asc"
                     onChange={handleChange}
                     >
                         <option value="asc">Ascending</option>
@@ -93,7 +107,7 @@ export default function TwitterApp () {
             </div>
             </div>
             }
-            {results  && results.length > 0 && <SearchResults statuses={results} sort={sortBy} order={order}/>}
+            {results  && results.length > 0 ? <SearchResults statuses={results} sort={sortBy} order={order}/> : <span>No results available</span>}
         </div>
     );
 }

@@ -13,7 +13,13 @@ const SearchResults = (
         return (
             <>
                 {sorted.map((status) => 
-                    <div className="results">{status.text}</div>
+                    <div key={status.id} className="results">
+                        <p>{status.text}</p>
+                        <hr/>
+                        <p>Favourites count : {status.favourites}</p>
+                        <p>Retweet count: {status.retweets}</p>
+                        <p>Followers count: {status.followers}</p>
+                    </div>
                 )}
             </>
         );

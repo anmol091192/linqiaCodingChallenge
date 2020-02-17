@@ -9,7 +9,7 @@ const SearchQueryInfo = (
         return (
             <>
                 {hashtagValue.map((hashtag) => hashtag.length > 0
-                    ? <div className="hashtag">{hashtag}</div>
+                    ? <div key={hashtag} className="hashtag">{hashtag}</div>
                     : null
                 )}
             </>

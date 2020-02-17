@@ -19,26 +19,22 @@ var T = new Twit({
 
 app.get('/search', (req,res) => {
     var queryParameters =  req.query;
-    console.log("query paramteres", queryParameters);
     var params = {
         q: queryParameters.hashtags, 
         count: queryParameters.count 
     };
-    console.log('--- twitter api called ! ----');
-    let result = {};
    T.get('search/tweets',params) .catch(function (err) {
     console.log('caught error', err.stack)
   })
   .then(function (result) {
-    console.log(result.data.statuses);
     let data = result.data.statuses.map((status)=>{
       return  {
         id:status.id,
         created_at : status.created_at,
         text : status.text,
         retweets : status.retweet_count,
-        favorites : status.favorite_count,
-        followers : status.followers_count,
+        favourites : status.user.favourites_count,
+        followers : status.user.followers_count,
         name: status.user.name,
         handle: status.user.screen_name
     }
