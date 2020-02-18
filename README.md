@@ -54,6 +54,7 @@ cd ..
 npm run dev
 ```
 
+App wilL be running on : http://localhost:3000/
 
 ## Deployment
 
@@ -73,5 +74,5 @@ app is deplpoyed on heroku : https://fathomless-river-42114.herokuapp.com/
 
 ## Authors
 
-* **Anmol Khandekar** - *Initial work* 
+* **Anmol Khandekar**
 
