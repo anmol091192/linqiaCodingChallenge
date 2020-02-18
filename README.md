@@ -2,7 +2,7 @@
 
 Twitter Content Lab is a simple webApp to display N sorted tweets with one or more hashtags. Tweets can be sorted based on favourites , retweets and followers count.
 
-## Archtitecture and Design design
+## Archtitecture and Design 
 
 ### The architecture for this app is as follows:
 
@@ -26,7 +26,7 @@ Design :
 - I have tried to use ES6 syntax as much as possible.
 - I have used arrow function to bind this vairable with the function as I am using functions instead of class.
 - I have used Css to style my components because not a lot of styling were changing dynamically for this app.
-- Could have made Utils folder to resue the logic if had there were more components. As for now just kept them in the form function as they are not required elsewhere.
+- Could have made Utils folder to reuse the logic if there were more components. As for now just kept them in the form.js file as they are not required elsewhere.
 - I have placed each component in it own folder and if that components have sub-components they are placed within that folder itself.
 
 
